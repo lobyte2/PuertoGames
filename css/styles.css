@@ -1,0 +1,534 @@
+/* Variables */
+:root {
+  --color-primario: #1e90ff;
+  --color-secundario: #241824;
+  --color-texto: #923986;
+  --fuente-principal: 'Poppins', sans-serif;
+}
+
+/* Margen  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos del body */
+body {
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+}
+
+/* Barra de navegacion */
+.navbar {
+  background: rgb(111, 27, 150);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+/* Logo dentro de la barra */
+.navbar .logo {
+  color: #fff;
+  font-size: 24px;
+}
+
+/* Contenedor de enlaces de navegacion */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
+
+/* Estilos de los enlaces de navegacion */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Hover de los enlaces de navegacion */
+.nav-links a:hover {
+  background: #f843e9;
+}
+
+/* Seccion Hero principal */
+.hero {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 16px;
+  position: relative; 
+}
+
+/* Overlay oscuro en Hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Titulo en Hero */
+.hero h1 {
+  font-size: 48px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: transparent;
+  background: linear-gradient(45deg, #faf7fa, #f843e9);
+  -webkit-background-clip: text;
+  text-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+  font-weight: bold;
+  z-index: 1;
+}
+
+/* Texto dentro del contenido de Hero */
+.hero-content p {
+  font-size: 24px;
+  margin: 16px 0;
+}
+
+/* Contenedor del slider */
+.slider-container {
+  position: relative;
+  top: 50px;
+  width: 100%;
+  max-width: 800px;
+  margin: 32px auto;
+}
+
+/* Slider con flexbox */
+.slider {
+  display: flex;
+  overflow: hidden;
+}
+
+/* Cada slide individual */
+.slide {
+  width: 100%;
+  display: none;
+}
+
+/* Slide activo */
+.slide.active {
+  display: block;
+}
+
+/* Botones de navegacion del slider */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* Flechas*/
+.prev {
+  left: 0;
+}
+.next {
+  right: 0;
+}
+
+/* Color flechas */
+.prev:hover, .next:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Linea de navegacion del slider */
+.lineas {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+/* Linea individual */
+.linea {
+  height: 2px;
+  width: 20px;
+  margin: 0 6px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: .6;
+  cursor: pointer;
+}
+
+/* Linea ocupada */
+.linea.active {
+  background: #f1f1f1;
+  opacity: 1;
+}
+
+/* Secciones de categorias, productos destacados y CTA */
+.categorias, .productos-destacados, .cta {
+  padding: 32px;
+  text-align: center;
+}
+
+/* Contenedor de categorias */
+.categorias {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+}
+
+/* Estilos de categoria y producto */
+.categoria, .producto {
+  background: #513ff5;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  padding: 24px;
+  margin: 16px;
+  color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  width: 100%;
+  text-align: center;
+}
+
+/* Hover de categoria y producto */
+.categoria:hover, .producto:hover {
+  transform: scale(1.05);
+  background-color: #4f46e5;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+/* Titulos en categorias y productos */
+.categorias h2, .producto h3 {
+  font-size: 24px;
+}
+
+/* Contenedor de productos destacados */
+.productos-destacados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px;
+}
+
+/* Titulo de productos destacados */
+.productos-destacados h2 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Estilos de producto individual */
+.producto {
+  width: 280px;
+  text-align: center;
+}
+
+/* Imagen de producto */
+.producto img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Video  */
+.producto iframe {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* Boton general */
+.boton {
+  background: rgb(111, 27, 150);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 16px;
+}
+
+/* Hover del boton */
+.boton:hover {
+  background: #f843e9;
+}
+
+/* Galeria de imagenes en productos destacados */
+.productos-destacados .galeria {
+  display: flex;
+  width: 600px;
+  height: 430px;
+  margin-bottom: 32px;
+  justify-content: center;
+}
+
+/* Imagenes de la galeria */
+.productos-destacados .galeria img {
+  width: 0;
+  flex-grow: 3;
+  object-fit: cover;
+  opacity: .5;
+  transition: .5s;
+}
+
+/* Hover sobre imágenes de la galeria */
+.productos-destacados .galeria img:hover {
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+/* Primer imagen de la galeria */
+.productos-destacados .galeria img:first-child {
+  width: 100px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+/* Footer general */
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  margin-top: auto;
+}
+
+/* Pagina de detalle de producto */
+.detalle-producto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 32px;
+}
+
+/* Imagen del detalle del producto */
+.detalle-producto img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+/* Precio del producto */
+.precio {
+  font-size: 24px;
+  color: green;
+  margin: 16px 0;
+}
+
+/* Formulario de contacto */
+.formulario-contacto {
+  padding: 32px;
+  max-width: 700px;
+  width: 90%;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs y textarea */
+input, textarea {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  min-height: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Inputs y textarea enfocados */
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.5);
+}
+
+/* Estilo para textarea */
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Boton del formulario */
+.boton {
+  background: rgb(111, 27, 150);
+  color: #fff;
+  padding: 16px 32px;
+  font-size: 18px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* Hover del boton de formulario */
+.boton:hover {
+  background: #f843e9;
+}
+
+/* Responsive general */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .navbar .logo {
+    font-size: 20px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+  .slider-container {
+    max-width: 100%;
+  }
+  .prev, .next {
+    padding: 12px;
+    font-size: 24px;
+  }
+  .categorias, .cta {
+    padding: 24px;
+  }
+  .producto {
+    width: 80%;
+    margin: auto;
+  }
+  .productos-destacados {
+    flex-direction: column;
+  }
+  .boton {
+    padding: 10px 20px;
+  }
+  .footer {
+    padding: 12px;
+  }
+  .detalle-producto {
+    flex-direction: column;
+    padding: 16px;
+  }
+  .detalle-producto img {
+    width: 100%;
+  }
+  .formulario-contacto {
+    padding: 16px;
+  }
+  input, textarea {
+    font-size: 14px;
+  }
+  .productos-destacados .galeria {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+  .productos-destacados .galeria img,
+  .productos-destacados .galeria img:hover,
+  .productos-destacados .galeria img:first-child {
+    width: 100%;
+    flex-grow: 0;
+    opacity: 1;
+  }
+}
+
+/* Enlaces en categorias */
+.categorias a {
+  text-decoration: none;
+}
+
+/* Organizacion de categorias de productos */
+.producto-categorias {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+}
+
+/* Grid de productos en categorias */
+.producto-categorias .juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
+}
+/* Estilo individual de producto en categorias */
+.producto-categorias .producto {
+  background: #513ff5;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  text-align: center;
+}
+/* Hover en producto de categorias */
+.producto-categorias .producto:hover {
+  transform: scale(1.05);
+  background-color: #4f46e5;
+}
+/* Boton en producto de categorias */
+.producto-categorias .boton {
+  background: rgb(111, 27, 150);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 12px;
+  display: inline-block;
+}
+/* Estilos para detalles en producto */
+.producto-categorias details {
+  margin-top: 15px;
+}
+/* Estilos para summary en productos */
+.producto-categorias summary, .productos-destacados summary {
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #fff;
+  color: #513ff5;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+/* Fondo para página de contacto */
+.bodycontacto {
+  background-size: cover;
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+/* Arreglar fondo negro */
+.hero::before {
+  background: none;
+}

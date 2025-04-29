@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PuertoGames | Inicio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bodycontacto" style="background: url('/fondo.jpg') no-repeat center/cover; background-size: cover;"><!-- Fondo (detrás de todo) -->
+  <!-- Fondo para el Hero (solo cubre la seccion hero) -->
+  <div class="hero-background" style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75vh;
+    background: url('hr.jpg') no-repeat center/cover;
+    z-index: -1;
+  "></div>
+
+  <!-- Fondo (detras de todo) -->
+  <div class="body-background" style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('fondo.jpg') no-repeat center/cover;
+    z-index: -2;
+    opacity: .3;
+  "></div>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <div class="logo">PuertoGames</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="producto.html">Producto</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Slider -->
+  <section class="hero">
+    <h1>Tus Juegos Favoritos</h1>
+    <div class="slider-container">
+      <div class="slider">
+        <img src="hl3.jpg" alt="Juego 1" class="slide active">
+        <img src="psp.jpg" alt="Juego 2" class="slide">
+        <img src="xbox.jpg" alt="Juego 3" class="slide">
+      </div>
+     <!-- Boton para ir al slide anterior -->
+<button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+
+<!-- Boton para ir al siguiente slide -->
+<button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+<!-- Contenedor de Lineas de navegacion -->
+<div class="lineas">
+  <!-- Linea para el primer slide -->
+  <span class="linea active" onclick="moveToSlide(0)"></span>
+
+  <!-- Linea para el segundo slide -->
+  <span class="linea" onclick="moveToSlide(1)"></span>
+
+  <!-- Linea para el tercer slide -->
+  <span class="linea" onclick="moveToSlide(2)"></span>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorias -->
+  <section class="categorias">
+    <h2>Categorías</h2>
+    <a href="producto.html" class="categoria">
+      <h3>Acción y aventura</h3>
+      <p>Juegos de acción en primera y tercera persona, con historias alucinantes.</p>
+    </a>
+    <a href="producto.html" class="categoria">
+      <h3>Estrategia</h3>
+      <p>Calcula fríamente tus movimientos y decisiones.</p>
+    </a>
+    <a href="producto.html" class="categoria">
+      <h3>RPG</h3>
+      <p>Construye tu historia en un MMO RPG no lineal como al...</p>
+    </a>
+  </section>
+
+  <!-- Juegos destacados -->
+  <section class="productos-destacados">
+    <h2>Juegos Destacados</h2>
+    <section class="galeria">
+      <img src="destacados.png" alt="imagen1">
+      <img src="cyber.jpg" alt="imagen2">
+      <img src="witcher.webp" alt="imagen3">
+      <img src="bal.jpg" alt="imagen4">
+    </section>
+<!-- Cyberpunk 2077 -->
+    <div class="producto">
+      <img src="cyber.jpg" alt="Juego destacado">
+      <h3>Cyberpunk 2077</h3>
+      <p>$29.990</p>
+      <details>
+        <summary>Mas detalle</summary>
+        <p>Explora una ciudad futurista en un mundo abierto lleno de acción y decisiones.</p>
+        <div style="display: flex; justify-content: center; padding: 10px 0;">
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/qIcTM8WXFjk" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </details>
+      <a href="producto.html" class="boton">Ver Producto</a>
+    </div>
+<!-- The Witcher 3 -->
+    <div class="producto">
+      <img src="tw.avif" alt="Juego destacado">
+      <h3>The Witcher 3</h3>
+      <p>$18.300</p>
+      <details>
+        <summary>Mas detalle</summary>
+        <p>Acompaña a Geralt de Rivia en una épica aventura de fantasía y monstruos.</p>
+        <div style="display: flex; justify-content: center; padding: 10px 0;">
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/c0i88t0Kacs" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </details>
+      <a href="producto.html" class="boton">Ver Producto</a>
+    </div>
+<!-- Baldur's Gate 3 -->
+    <div class="producto">
+      <img src="bal.jpg" alt="Juego destacado"> 
+      <h3>Baldur's Gate 3</h3>
+      <p>$39.990</p>
+      <details>
+        <summary>Mas detalle</summary>
+        <p>Vive una intensa aventura de rol basada en el universo de Dungeons & Dragons.</p>
+        <div style="display: flex; justify-content: center; padding: 10px 0;">
+          <iframe width="320" height="180" src="https://www.youtube.com/embed/WvMf_DcyWbI" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </details>
+      <a href="producto.html" class="boton">Ver Producto</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 PuertoGames - Todos los derechos reservados | <a href="contacto.html">Contacto</a></p>
+    <p>puertogames@games.cl</p>
+  </footer>
+
+  <script src="js/slider.js"></script>
+</body>
+</html>
